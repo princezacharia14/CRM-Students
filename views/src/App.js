@@ -13,18 +13,18 @@ import axios from 'axios';
 export default class App extends Component {
   state= {};
 
-  componentDidMount = () => {
-    axios.get('user').then(
-        res => {
-           this.setState({
-            user: res.data
-           });
-        },
-        err => {
-            console.log(err);
-        }
-    )
-};
+//   componentDidMount = () => {
+//     axios.get(' http://localhost:4111').then(
+//         res => {
+//            this.setState({
+//             User: res.data
+//            });
+//         },
+//         err => {
+//             console.log(err);
+//         }
+//     )
+// };
 
   render() {
   return (

@@ -1,6 +1,7 @@
 const User = require('../model/User');
 
 const register = async (req, res, next) => {
+  console.log(reg.body)
   try {
     const { firstName, lastName, email, password, confirmPassword} = req.body;
     

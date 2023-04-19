@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
@@ -6,7 +7,7 @@ const userRoutes = require('./routes/userRoutes');
 const authRoute = require('./routes/authRoutes');
 
 dotenv.config();
-
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -18,7 +19,7 @@ mongoose.connect(database, { useUnifiedTopology: true, useNewUrlParser: true })
 
 app.set('view engine', 'ejs');
 
-const PORT = process.env.PORT || 4111;
+const PORT = 4000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
