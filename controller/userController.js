@@ -2,8 +2,8 @@ const User = require('../model/User');
 
 const register = async (req, res, next) => {
   try {
-    const { firstName, lastName, email, password, confirmPassword} = req.body;
-    
+    const { firstName, lastName, email, password, confirmPassword } = req.body;
+
 
     // Validate the user input
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
@@ -28,5 +28,5 @@ const register = async (req, res, next) => {
     next(err);
   }
 };
- 
+
 module.exports = register
