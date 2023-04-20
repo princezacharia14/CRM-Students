@@ -19,7 +19,7 @@ mongoose.connect(database, { useUnifiedTopology: true, useNewUrlParser: true })
 
 app.set('view engine', 'ejs');
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4111;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
