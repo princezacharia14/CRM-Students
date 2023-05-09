@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id" : 1,
+            "courseName" : "Front End Development",
+            "courseData" : "1 May",
+            "courseTime" : "10 AM"
+            
+        },
+        {
+            "id" : 2,
+            "courseName" : "Back End Development",
+            "courseData" : "1 May",
+            "courseTime" : "10 AM"
+            
+        }
+    ]
+}

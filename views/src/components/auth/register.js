@@ -4,6 +4,7 @@ import axios from "axios";
 // import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import config from '../../config.json';
+import { Navigate } from "react-router-dom";
 
 
 function Register() {
@@ -12,7 +13,6 @@ function Register() {
     const [userEmail, setUserEmail] = useState("")
     const [userPassword, setUserPassword] = useState("")
     const [userConfirmPassword, setUserConfirmPassword] = useState("")
-
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -36,7 +36,8 @@ function Register() {
 
         await axios.post('http://localhost:4111/register', data).then(
             res => {
-                console.log(res)
+                console.log(res);
+                
             }
         ).catch(
             err => {
@@ -45,15 +46,6 @@ function Register() {
         )
 
     };
-
-    // let error = '';
-    //     if(this.state.message){
-    //         error = (
-    //             <div className="aler alert-danger" role="alert">
-    //                 {this.state.message}
-    //             </div>
-    //         )
-    //     }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -115,7 +107,8 @@ function Register() {
             </div>
 
             <div className="form-group">
-                <button className="btn btn-primary btn-block height">Sign Up</button>
+                {/* <button type="button" className="btn btn-primary btn-block height">Sign Up</button> */}
+                <button>Sign Up</button>
             </div>
 
         </form>
