@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { AuthProvider } from './components/context/AuthProvider';
 
 // let headers = new fetch.Headers()

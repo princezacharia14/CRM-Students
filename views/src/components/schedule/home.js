@@ -1,25 +1,11 @@
 import axios from "axios"
 import React, { Component } from "react"
-// import './table-container.css'
-
-// const Home = (props) =>{
-
-
-//     return (
-//        <div>
-//             <h2>Welcome</h2>
-//        </div>
-//     )
-// }
-
-// export default Home
-
 
 function Home(){
     
     return(
     <div className="table-container">
-        <h1>Welcome..</h1>
+        <h1>Welcome to our website</h1>
         {/* <table>
             <thead>
             <tr>
@@ -47,7 +33,7 @@ function Home(){
             </tbody>
         </table> */}
 
-        <button type="button" className="btn btn-primary">Add Course</button>
+        {/* <button type="button" className="btn btn-primary">Add Course</button> */}
     </div>
     )
 }
