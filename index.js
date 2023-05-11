@@ -3,8 +3,8 @@ var cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const userRoutes = require('./routes/userRoutes');
-const authRoute = require('./routes/authRoutes');
+global.logger = require('./config/wintson');
+ 
 
 dotenv.config();
 app.use(cors());
@@ -25,9 +25,14 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// Routes
-app.use('/register', userRoutes);
-app.use('/login', authRoute)
+ const authRoute = require('./routes/authRoutes');
+ const registerRoute = require('./routes/registerRoute');
+ const coop = require('./routes/coopRoutes');
+ 
+app.use('/login', authRoute);
+app.use('/register', registerRoute);
+app.use('/coop', coop);
+ 
 
 
 // Handle errors
