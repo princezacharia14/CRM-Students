@@ -10,10 +10,10 @@ const Table = () => {
     const [courseName, setCourseName] = useState('');
     const [courseDate, setCourseDate] = useState('');
     const [courseTime, setCourseTime] = useState('');
-    const [updateCourseName, setUpdateCourseName] = useState('');
-    const [updateCourseDate, setUpdateCourseDate] = useState('');
-    const [updateCourseTime, setUpdateCourseTime] = useState('');
-    const [editId, setEditId] = useState(-1);
+    // const [updateCourseName, setUpdateCourseName] = useState('');
+    // const [updateCourseDate, setUpdateCourseDate] = useState('');
+    // const [updateCourseTime, setUpdateCourseTime] = useState('');
+    const [id, setId] = useState(-1);
 
     useEffect(() => {
         axios.get('http://localhost:3000/users')
@@ -47,7 +47,7 @@ const Table = () => {
     }    
 
     const handleUpdate = async () => {
-        await axios.put('http://localhost:3000/users/' + editId, {id: editId, courseName: setCourseName, courseDate: setUpdateCourseDate, courseTime: setCourseTime})
+        await axios.put('http://localhost:3000/users/' + id, {id: id, courseName: setCourseName, courseDate: setCourseDate, courseTime: setCourseTime})
         .then(res => {
             console.log(res);
             window.location.reload();
@@ -98,7 +98,7 @@ const Table = () => {
                 </div>
 
                 {/* <button type='button' className="btn btn-primary btn-block height">Add</button> */}
-                <button>Add</button>
+                <button>Add Course</button>
             </form>
         </div>
         <table>
@@ -117,9 +117,9 @@ const Table = () => {
                         user.id === editId ? 
                         <tr>
                             <td>{user.id}</td>
-                            <td><input type='text' value={updateCourseName} onChange={e => setUpdateCourseName(e.target.value)}/></td>
-                            <td><input type='date' value={updateCourseDate} onChange={e => setUpdateCourseDate(e.target.value)}/></td>
-                            <td><input type='time' value={updateCourseTime} onChange={e => setUpdateCourseTime(e.target.value)}/></td>
+                            <td><input type='text' value={setCourseName} onChange={e => setCourseName(e.target.value)}/></td>
+                            <td><input type='date' value={setCourseDate} onChange={e => setCourseDate(e.target.value)}/></td>
+                            <td><input type='time' value={setCourseTime} onChange={e => setCourseTime(e.target.value)}/></td>
                             <td><button onClick={handleUpdate}>Update</button></td>
                         </tr>
                         :
