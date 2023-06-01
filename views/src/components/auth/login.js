@@ -73,7 +73,7 @@ function Login() {
             <>
             {success ? (
               <section>
-                <h1>Hello {setUserEmail}</h1>
+                <h1>Hello {userEmail}</h1>
                 <h1>Successfully logged in! </h1>
                 
                 <br />
